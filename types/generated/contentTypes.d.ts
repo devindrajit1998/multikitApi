@@ -406,6 +406,7 @@ export interface ApiBrandBrand extends Schema.CollectionType {
     singularName: 'brand';
     pluralName: 'brands';
     displayName: 'brand';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -418,7 +419,9 @@ export interface ApiBrandBrand extends Schema.CollectionType {
       'oneToMany',
       'api::product.product'
     >;
-    about: Attribute.Text;
+    address: Attribute.Text;
+    website: Attribute.String;
+    email: Attribute.Email;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
