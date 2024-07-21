@@ -505,6 +505,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::brand.brand'
     >;
     slug: Attribute.UID<'api::product.product', 'name'>;
+    stock: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
