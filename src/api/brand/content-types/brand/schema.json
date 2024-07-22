@@ -40,6 +40,12 @@
     },
     "email": {
       "type": "email"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "brands"
     }
   }
 }

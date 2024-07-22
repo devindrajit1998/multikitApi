@@ -422,6 +422,11 @@ export interface ApiBrandBrand extends Schema.CollectionType {
     address: Attribute.Text;
     website: Attribute.String;
     email: Attribute.Email;
+    categories: Attribute.Relation<
+      'api::brand.brand',
+      'manyToMany',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -457,6 +462,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'api::category.category',
       'oneToMany',
       'api::product.product'
+    >;
+    brands: Attribute.Relation<
+      'api::category.category',
+      'manyToMany',
+      'api::brand.brand'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
