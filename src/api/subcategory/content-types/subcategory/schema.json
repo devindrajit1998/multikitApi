@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "brands",
+  "collectionName": "subcategories",
   "info": {
-    "singularName": "brand",
-    "pluralName": "brands",
-    "displayName": "brand",
+    "singularName": "subcategory",
+    "pluralName": "subcategories",
+    "displayName": "subcategory",
     "description": ""
   },
   "options": {
@@ -15,7 +15,7 @@
     "name": {
       "type": "string"
     },
-    "logo": {
+    "image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -26,20 +26,17 @@
         "audios"
       ]
     },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "subcategories"
+    },
     "products": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product",
-      "mappedBy": "brand"
-    },
-    "address": {
-      "type": "text"
-    },
-    "website": {
-      "type": "string"
-    },
-    "email": {
-      "type": "email"
+      "mappedBy": "subcategory"
     }
   }
 }
